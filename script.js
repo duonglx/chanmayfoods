@@ -1,9 +1,10 @@
 /**
  * Chan Mây Foods - Landing Page JavaScript
- * Features: Mobile menu, size selector, reviews slider, scroll animations, deeplinks
+ * Features: Dark mode, Mobile menu, Size selector, Reviews slider, Scroll animations, Deeplinks
  */
 
 document.addEventListener('DOMContentLoaded', () => {
+  initDarkMode();
   initMobileMenu();
   initSizeSelectors();
   initReviewsSlider();
@@ -25,6 +26,19 @@ const deeplinks = {
 };
 
 /* ===========================================
+   Dark Mode Toggle
+   =========================================== */
+function initDarkMode() {
+  const toggle = document.getElementById('theme-toggle');
+  if (!toggle) return;
+
+  toggle.addEventListener('click', () => {
+    const isDark = document.documentElement.classList.toggle('dark');
+    localStorage.theme = isDark ? 'dark' : 'light';
+  });
+}
+
+/* ===========================================
    Mobile Menu Toggle
    =========================================== */
 function initMobileMenu() {
@@ -35,7 +49,7 @@ function initMobileMenu() {
 
   menuBtn.addEventListener('click', () => {
     const isActive = nav.classList.toggle('active');
-    menuBtn.classList.toggle('active');
+    nav.classList.toggle('hidden', !isActive);
     menuBtn.setAttribute('aria-expanded', isActive);
   });
 
@@ -43,7 +57,7 @@ function initMobileMenu() {
   nav.querySelectorAll('a').forEach(link => {
     link.addEventListener('click', () => {
       nav.classList.remove('active');
-      menuBtn.classList.remove('active');
+      nav.classList.add('hidden');
       menuBtn.setAttribute('aria-expanded', 'false');
     });
   });
@@ -52,7 +66,7 @@ function initMobileMenu() {
   document.addEventListener('click', (e) => {
     if (!nav.contains(e.target) && !menuBtn.contains(e.target)) {
       nav.classList.remove('active');
-      menuBtn.classList.remove('active');
+      nav.classList.add('hidden');
       menuBtn.setAttribute('aria-expanded', 'false');
     }
   });
@@ -72,13 +86,19 @@ function initSizeSelectors() {
 
     // Remove active from siblings
     const selector = btn.closest('.size-selector');
-    selector.querySelectorAll('button').forEach(b => b.classList.remove('active'));
+    selector.querySelectorAll('button').forEach(b => {
+      b.classList.remove('active');
+      // Reset Tailwind classes
+      b.classList.remove('border-primary', 'bg-primary', 'text-white');
+      b.classList.add('border-primary/30', 'dark:border-primary/50');
+    });
 
     // Add active to clicked
-    btn.classList.add('active');
+    btn.classList.add('active', 'border-primary', 'bg-primary', 'text-white');
+    btn.classList.remove('border-primary/30', 'dark:border-primary/50');
 
     // Update price
-    const card = btn.closest('.product-card');
+    const card = btn.closest('article');
     const priceEl = card.querySelector('.price');
     const size = btn.dataset.size;
 
@@ -95,26 +115,51 @@ function initSizeSelectors() {
 
 /* ===========================================
    Reviews Slider
-   Horizontal scroll with navigation buttons
+   Horizontal scroll with navigation and dots
    =========================================== */
 function initReviewsSlider() {
   const container = document.querySelector('.reviews-container');
   const prevBtn = document.querySelector('.reviews-prev');
   const nextBtn = document.querySelector('.reviews-next');
+  const dots = document.querySelectorAll('.review-dot');
+  const cards = document.querySelectorAll('.review-card');
 
-  if (!container) return;
+  if (!container || !cards.length) return;
 
-  const scrollAmount = 300;
+  const cardWidth = cards[0].offsetWidth + 16; // card width + gap
 
+  // Navigation buttons
   prevBtn?.addEventListener('click', () => {
-    container.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+    container.scrollBy({ left: -cardWidth, behavior: 'smooth' });
   });
 
   nextBtn?.addEventListener('click', () => {
-    container.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+    container.scrollBy({ left: cardWidth, behavior: 'smooth' });
   });
 
-  // Touch swipe is handled by CSS scroll-snap
+  // Dot navigation
+  dots.forEach((dot, index) => {
+    dot.addEventListener('click', () => {
+      container.scrollTo({ left: index * cardWidth, behavior: 'smooth' });
+    });
+  });
+
+  // Update dots on scroll
+  container.addEventListener('scroll', () => {
+    const scrollPosition = container.scrollLeft;
+    const activeIndex = Math.round(scrollPosition / cardWidth);
+
+    dots.forEach((dot, index) => {
+      if (index === activeIndex) {
+        dot.classList.add('active', 'w-6');
+        dot.classList.remove('bg-primary/30', 'dark:bg-primary/50');
+        dot.classList.add('bg-primary');
+      } else {
+        dot.classList.remove('active', 'w-6', 'bg-primary');
+        dot.classList.add('bg-primary/30', 'dark:bg-primary/50');
+      }
+    });
+  });
 }
 
 /* ===========================================
@@ -126,9 +171,14 @@ function initScrollAnimations() {
 
   if (!elements.length) return;
 
+  // Check if user prefers reduced motion
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    elements.forEach(el => el.classList.add('visible'));
+    return;
+  }
+
   // Check if IntersectionObserver is supported
   if (!('IntersectionObserver' in window)) {
-    // Fallback: show all elements immediately
     elements.forEach(el => el.classList.add('visible'));
     return;
   }
@@ -136,11 +186,7 @@ function initScrollAnimations() {
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
-        // Add small delay for staggered effect
-        const delay = entry.target.dataset.delay || 0;
-        setTimeout(() => {
-          entry.target.classList.add('visible');
-        }, delay);
+        entry.target.classList.add('visible');
         observer.unobserve(entry.target);
       }
     });
@@ -151,8 +197,10 @@ function initScrollAnimations() {
 
   elements.forEach((el, index) => {
     // Add stagger delay for grid items
-    if (el.closest('.usp-grid') || el.closest('.products-grid')) {
-      el.dataset.delay = index * 100;
+    const parent = el.parentElement;
+    if (parent && (parent.classList.contains('grid') || parent.closest('.grid'))) {
+      const siblingIndex = Array.from(parent.children).indexOf(el);
+      el.dataset.delay = (siblingIndex * 100).toString();
     }
     observer.observe(el);
   });
@@ -177,15 +225,15 @@ function initDeeplinks() {
 }
 
 /* ===========================================
-   Optional: Sticky Header Enhancement
+   Sticky Header Enhancement
    Adds 'scrolled' class for styling changes
    =========================================== */
 (function initStickyHeader() {
-  const header = document.querySelector('.header');
+  const header = document.querySelector('header');
   if (!header) return;
 
   window.addEventListener('scroll', () => {
-    if (window.pageYOffset > 50) {
+    if (window.scrollY > 50) {
       header.classList.add('scrolled');
     } else {
       header.classList.remove('scrolled');

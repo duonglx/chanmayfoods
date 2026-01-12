@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="vi" class="scroll-smooth">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,7 +9,6 @@
   <meta name="keywords" content="Chan Mây Foods, nước xốt, muối ớt, sate tôm, xốt phô mai, gia vị Việt Nam, muối ớt xiêm xanh, muối ớt hiểm đỏ">
   <meta name="theme-color" content="#D4713D">
 
-  <!-- Canonical URL - Update with your actual domain -->
   <link rel="canonical" href="https://chanmayfoods.vn/">
 
   <!-- Open Graph / Facebook -->
@@ -17,7 +16,7 @@
   <meta property="og:url" content="https://chanmayfoods.vn/">
   <meta property="og:title" content="Chan Mây Foods - Vị Ngon Trứ Danh">
   <meta property="og:description" content="Chan thôi không cần nêm nếm! Nước xốt và gia vị chất lượng cao từ nguyên liệu tự nhiên.">
-  <meta property="og:image" content="https://chanmayfoods.vn/images/hero-banner.png">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1612240498936-65f5101365d2?w=1200&h=630&fit=crop">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:locale" content="vi_VN">
@@ -27,20 +26,55 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Chan Mây Foods - Vị Ngon Trứ Danh">
   <meta name="twitter:description" content="Chan thôi không cần nêm nếm! Nước xốt và gia vị chất lượng cao từ nguyên liệu tự nhiên.">
-  <meta name="twitter:image" content="https://chanmayfoods.vn/images/hero-banner.png">
+  <meta name="twitter:image" content="https://images.unsplash.com/photo-1612240498936-65f5101365d2?w=1200&h=630&fit=crop">
 
   <title>Chan Mây Foods - Vị Ngon Trứ Danh | Nước Xốt & Gia Vị Việt Nam</title>
 
-  <!-- Favicon - Add your favicon files -->
-  <link rel="icon" type="image/x-icon" href="images/favicon.ico">
-  <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍜</text></svg>">
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Be+Vietnam+Pro:wght@300;400;500;600&display=swap" rel="stylesheet">
 
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            primary: '#D4713D',
+            'primary-hover': '#C2632F',
+            secondary: '#8B2D35',
+            'secondary-hover': '#721F26',
+            cream: '#FDF8F3',
+            'cream-dark': '#FAF5EE',
+            'text-primary': '#2D1810',
+            'text-muted': '#6B5A4F',
+            accent: '#C9A227',
+            success: '#4A7C59',
+          },
+          fontFamily: {
+            heading: ['Playfair Display', 'serif'],
+            body: ['Be Vietnam Pro', 'sans-serif'],
+          },
+        },
+      },
+    }
+  </script>
+
   <link rel="stylesheet" href="styles.css">
+
+  <!-- Dark mode script - runs before page renders to prevent flash -->
+  <script>
+    if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.classList.add('dark')
+    } else {
+      document.documentElement.classList.remove('dark')
+    }
+  </script>
 
   <!-- Schema.org Structured Data -->
   <script type="application/ld+json">
@@ -50,8 +84,8 @@
     "name": "Chan Mây Foods",
     "description": "Nước xốt và gia vị Việt Nam chất lượng cao từ nguyên liệu tự nhiên",
     "url": "https://chanmayfoods.vn",
-    "logo": "https://chanmayfoods.vn/images/logo.jpeg",
-    "image": "https://chanmayfoods.vn/images/hero-banner.png",
+    "logo": "https://images.unsplash.com/photo-1472476443507-c7a5948772fc?w=200&h=200&fit=crop",
+    "image": "https://images.unsplash.com/photo-1612240498936-65f5101365d2?w=1200&h=630&fit=crop",
     "telephone": "+84123456789",
     "email": "contact@chanmayfoods.vn",
     "address": {
@@ -67,236 +101,409 @@
     ]
   }
   </script>
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "name": "Chan Mây Foods",
-    "url": "https://chanmayfoods.vn",
-    "potentialAction": {
-      "@type": "SearchAction",
-      "target": "https://chanmayfoods.vn/?s={search_term_string}",
-      "query-input": "required name=search_term_string"
-    }
-  }
-  </script>
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "ItemList",
-    "itemListElement": [
-      {
-        "@type": "Product",
-        "position": 1,
-        "name": "Xốt Phô Mai Chan Mây",
-        "description": "Xốt phô mai đậm đà, nguyên liệu tự nhiên",
-        "image": "https://chanmayfoods.vn/images/xot-pho-mai-2.jpeg",
-        "offers": {
-          "@type": "Offer",
-          "price": "79000",
-          "priceCurrency": "VND",
-          "availability": "https://schema.org/InStock"
-        }
-      },
-      {
-        "@type": "Product",
-        "position": 2,
-        "name": "Muối Ớt Xiêm Xanh",
-        "description": "Muối ớt xiêm xanh cay vừa, thơm nồng",
-        "image": "https://chanmayfoods.vn/images/muoi-ot-xiem-xanh.jpeg",
-        "offers": {
-          "@type": "Offer",
-          "price": "65000",
-          "priceCurrency": "VND",
-          "availability": "https://schema.org/InStock"
-        }
-      },
-      {
-        "@type": "Product",
-        "position": 3,
-        "name": "Xốt Sate Tôm Jambon",
-        "description": "Xốt sate tôm jambon béo ngậy, đậm đà",
-        "image": "https://chanmayfoods.vn/images/xot-sate-tom.jpeg",
-        "offers": {
-          "@type": "Offer",
-          "price": "95000",
-          "priceCurrency": "VND",
-          "availability": "https://schema.org/InStock"
-        }
-      }
-    ]
-  }
-  </script>
 </head>
-<body>
-  <!-- Header -->
-  <header class="header">
-    <div class="container header-content">
-      <a href="#" class="logo">
-        <img src="images/logo.jpeg" alt="Chan Mây Foods Logo">
-      </a>
-      <button class="menu-toggle" aria-label="Menu" aria-expanded="false">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-      <nav class="nav-menu">
-        <a href="#products">Sản phẩm</a>
-        <a href="#story">Về chúng tôi</a>
-        <a href="#order">Mua hàng</a>
+<body class="font-body bg-cream dark:bg-slate-950 text-text-primary dark:text-slate-100 transition-colors duration-300">
+  <!-- Floating Header -->
+  <header class="fixed top-4 left-4 right-4 z-50">
+    <div class="max-w-6xl mx-auto">
+      <nav class="flex items-center justify-between px-4 py-3 rounded-2xl bg-white/80 dark:bg-slate-900/80 backdrop-blur-md shadow-lg border border-white/20 dark:border-slate-700/50">
+        <a href="#" class="flex items-center gap-2">
+          <img src="https://images.unsplash.com/photo-1472476443507-c7a5948772fc?w=80&h=80&fit=crop" alt="Chan Mây Foods Logo" class="h-10 w-10 rounded-full object-cover">
+          <span class="font-heading font-semibold text-secondary dark:text-primary hidden sm:block">Chan Mây</span>
+        </a>
+
+        <!-- Desktop Nav -->
+        <div class="hidden md:flex items-center gap-6">
+          <a href="#products" class="text-text-primary dark:text-slate-200 hover:text-primary dark:hover:text-primary transition-colors font-medium">Sản phẩm</a>
+          <a href="#story" class="text-text-primary dark:text-slate-200 hover:text-primary dark:hover:text-primary transition-colors font-medium">Về chúng tôi</a>
+          <a href="#order" class="px-5 py-2 bg-primary hover:bg-primary-hover text-white rounded-full font-medium transition-all hover:-translate-y-0.5">
+            Mua hàng
+          </a>
+        </div>
+
+        <!-- Mobile Menu + Dark Mode Toggle -->
+        <div class="flex items-center gap-2">
+          <!-- Dark Mode Toggle -->
+          <button type="button" id="theme-toggle" class="p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" aria-label="Toggle dark mode">
+            <!-- Sun icon (shown in dark mode) -->
+            <svg class="w-5 h-5 hidden dark:block text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/>
+            </svg>
+            <!-- Moon icon (shown in light mode) -->
+            <svg class="w-5 h-5 block dark:hidden text-slate-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/>
+            </svg>
+          </button>
+
+          <!-- Mobile Menu Toggle -->
+          <button type="button" class="md:hidden p-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors menu-toggle" aria-label="Menu" aria-expanded="false">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+            </svg>
+          </button>
+        </div>
       </nav>
+
+      <!-- Mobile Nav Menu -->
+      <div class="nav-menu hidden md:hidden mt-2 p-4 rounded-2xl bg-white/95 dark:bg-slate-900/95 backdrop-blur-md shadow-lg border border-white/20 dark:border-slate-700/50">
+        <a href="#products" class="block py-2 text-text-primary dark:text-slate-200 hover:text-primary font-medium">Sản phẩm</a>
+        <a href="#story" class="block py-2 text-text-primary dark:text-slate-200 hover:text-primary font-medium">Về chúng tôi</a>
+        <a href="#order" class="block mt-2 px-5 py-2 bg-primary hover:bg-primary-hover text-white rounded-full font-medium text-center transition-colors">
+          Mua hàng
+        </a>
+      </div>
     </div>
   </header>
 
   <main>
     <!-- Hero Section -->
-    <section id="hero" class="hero">
-      <div class="hero-content">
-        <h1>Vị Ngon Trứ Danh</h1>
-        <p class="hero-tagline">Chan thôi không cần nêm nếm!</p>
-        <a href="#products" class="btn btn-primary">Khám phá ngay</a>
+    <section id="hero" class="relative min-h-screen flex items-center justify-center overflow-hidden pt-24 pb-12 px-4">
+      <!-- Background Image with Overlay -->
+      <div class="absolute inset-0 z-0">
+        <img src="https://images.unsplash.com/photo-1612240498936-65f5101365d2?w=1920&h=1080&fit=crop" alt="" class="w-full h-full object-cover" aria-hidden="true">
+        <div class="absolute inset-0 bg-gradient-to-b from-cream/90 via-cream/70 to-cream dark:from-slate-950/90 dark:via-slate-950/70 dark:to-slate-950"></div>
       </div>
-      <div class="hero-image">
-        <img src="images/xot-pho-mai-1.jpeg" alt="Xốt Phô Mai Chan Mây">
+
+      <!-- Content -->
+      <div class="relative z-10 max-w-4xl mx-auto text-center">
+        <div class="animate-fade-in-up">
+          <h1 class="font-heading text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-secondary dark:text-primary mb-4">
+            Vị Ngon Trứ Danh
+          </h1>
+          <p class="text-lg sm:text-xl md:text-2xl text-primary dark:text-primary/90 font-medium mb-8">
+            Chan thôi không cần nêm nếm!
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="#products" class="px-8 py-3 bg-primary hover:bg-primary-hover text-white rounded-full font-semibold text-lg transition-all hover:-translate-y-1 hover:shadow-lg">
+              Khám phá ngay
+            </a>
+            <a href="#story" class="px-8 py-3 border-2 border-secondary dark:border-primary text-secondary dark:text-primary hover:bg-secondary hover:text-white dark:hover:bg-primary dark:hover:text-white rounded-full font-semibold text-lg transition-all hover:-translate-y-1">
+              Câu chuyện của chúng tôi
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Scroll Indicator -->
+      <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+        <svg class="w-6 h-6 text-secondary dark:text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
+        </svg>
       </div>
     </section>
 
-    <!-- USP Section -->
-    <section id="usp" class="usp">
-      <div class="container">
-        <div class="usp-grid">
-          <div class="usp-card animate-on-scroll">
-            <div class="usp-icon">🌿</div>
-            <h3>100% Tự nhiên</h3>
-            <p>Nguyên liệu tươi sạch, không chất tạo màu</p>
+    <!-- USP Section - Bento Grid -->
+    <section id="usp" class="py-16 md:py-24 bg-white dark:bg-slate-900">
+      <div class="max-w-6xl mx-auto px-4">
+        <h2 class="font-heading text-2xl sm:text-3xl md:text-4xl font-semibold text-secondary dark:text-primary text-center mb-12 animate-on-scroll">
+          Tại sao chọn Chan Mây?
+        </h2>
+
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+          <!-- Featured Card (larger) -->
+          <div class="col-span-2 row-span-2 p-6 md:p-8 rounded-2xl bg-gradient-to-br from-primary/10 to-secondary/10 dark:from-primary/20 dark:to-secondary/20 border border-primary/20 dark:border-primary/30 hover:shadow-xl transition-all duration-300 cursor-pointer animate-on-scroll">
+            <div class="w-16 h-16 mb-4 rounded-2xl bg-primary/20 dark:bg-primary/30 flex items-center justify-center">
+              <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/>
+              </svg>
+            </div>
+            <h3 class="font-heading text-xl md:text-2xl font-semibold text-secondary dark:text-white mb-2">100% Tự Nhiên</h3>
+            <p class="text-text-muted dark:text-slate-400">Nguyên liệu tươi sạch, không chất tạo màu, không phẩm màu công nghiệp. An toàn cho cả gia đình.</p>
           </div>
-          <div class="usp-card animate-on-scroll">
-            <div class="usp-icon">👨‍🍳</div>
-            <h3>Công thức gia truyền</h3>
-            <p>Bí quyết hương vị từ 3 thế hệ</p>
+
+          <!-- Card 2 -->
+          <div class="p-5 md:p-6 rounded-2xl bg-cream-dark dark:bg-slate-800 hover:shadow-lg transition-all duration-300 cursor-pointer animate-on-scroll">
+            <div class="w-12 h-12 mb-3 rounded-xl bg-secondary/10 dark:bg-secondary/20 flex items-center justify-center">
+              <svg class="w-6 h-6 text-secondary dark:text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+              </svg>
+            </div>
+            <h3 class="font-heading text-lg font-semibold text-secondary dark:text-white mb-1">Công thức gia truyền</h3>
+            <p class="text-sm text-text-muted dark:text-slate-400">Bí quyết hương vị từ 3 thế hệ</p>
           </div>
-          <div class="usp-card animate-on-scroll">
-            <div class="usp-icon">🛡️</div>
-            <h3>Không chất bảo quản</h3>
-            <p>An toàn cho cả gia đình</p>
+
+          <!-- Card 3 -->
+          <div class="p-5 md:p-6 rounded-2xl bg-cream-dark dark:bg-slate-800 hover:shadow-lg transition-all duration-300 cursor-pointer animate-on-scroll">
+            <div class="w-12 h-12 mb-3 rounded-xl bg-success/10 dark:bg-success/20 flex items-center justify-center">
+              <svg class="w-6 h-6 text-success" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+              </svg>
+            </div>
+            <h3 class="font-heading text-lg font-semibold text-secondary dark:text-white mb-1">Không chất bảo quản</h3>
+            <p class="text-sm text-text-muted dark:text-slate-400">An toàn cho cả gia đình</p>
           </div>
-          <div class="usp-card animate-on-scroll">
-            <div class="usp-icon">✨</div>
-            <h3>Hương vị đậm đà</h3>
-            <p>Chan thôi, không cần nêm nếm</p>
+
+          <!-- Card 4 -->
+          <div class="col-span-2 p-5 md:p-6 rounded-2xl bg-gradient-to-r from-secondary/10 to-primary/10 dark:from-secondary/20 dark:to-primary/20 border border-secondary/20 dark:border-secondary/30 hover:shadow-lg transition-all duration-300 cursor-pointer animate-on-scroll">
+            <div class="flex items-start gap-4">
+              <div class="w-12 h-12 rounded-xl bg-accent/20 flex items-center justify-center flex-shrink-0">
+                <svg class="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"/>
+                </svg>
+              </div>
+              <div>
+                <h3 class="font-heading text-lg font-semibold text-secondary dark:text-white mb-1">Hương vị đậm đà</h3>
+                <p class="text-sm text-text-muted dark:text-slate-400">"Chan thôi, không cần nêm nếm" - Cam kết của chúng tôi về chất lượng</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
     <!-- Products Section -->
-    <section id="products" class="products">
-      <div class="container">
-        <h2 class="section-title animate-on-scroll">Sản phẩm của chúng tôi</h2>
-        <div class="products-grid">
+    <section id="products" class="py-16 md:py-24 bg-cream dark:bg-slate-950">
+      <div class="max-w-6xl mx-auto px-4">
+        <h2 class="font-heading text-2xl sm:text-3xl md:text-4xl font-semibold text-secondary dark:text-primary text-center mb-4 animate-on-scroll">
+          Sản phẩm của chúng tôi
+        </h2>
+        <p class="text-text-muted dark:text-slate-400 text-center mb-12 animate-on-scroll">
+          Được chế biến từ nguyên liệu tự nhiên, đậm đà hương vị Việt
+        </p>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           <!-- Product 1: Xốt Phô Mai -->
-          <article class="product-card animate-on-scroll" data-prices='{"100g":"45,000đ","250g":"79,000đ","500g":"139,000đ"}'>
-            <img src="images/xot-pho-mai-2.jpeg" alt="Xốt Phô Mai Chan Mây">
-            <h3>Xốt Phô Mai Chan Mây</h3>
-            <p class="price">79,000đ</p>
-            <div class="size-selector">
-              <button data-size="100g">100g</button>
-              <button data-size="250g" class="active">250g</button>
-              <button data-size="500g">500g</button>
+          <article class="group bg-white dark:bg-slate-900 rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 animate-on-scroll" data-prices='{"100g":"45,000đ","250g":"79,000đ","500g":"139,000đ"}'>
+            <div class="relative overflow-hidden aspect-square">
+              <img src="https://images.unsplash.com/photo-1631452180519-c014fe946bc7?w=600&h=600&fit=crop" alt="Xốt Phô Mai Chan Mây" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+              <div class="absolute top-3 left-3 px-3 py-1 bg-primary text-white text-xs font-medium rounded-full">
+                Bán chạy
+              </div>
             </div>
-            <a href="#order" class="btn btn-secondary">Mua ngay</a>
+            <div class="p-5">
+              <div class="flex items-center gap-1 mb-2">
+                <div class="flex text-accent">
+                  <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+                  <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+                  <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+                  <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+                  <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+                </div>
+                <span class="text-xs text-text-muted dark:text-slate-500">(5.0)</span>
+              </div>
+              <h3 class="font-heading text-lg font-semibold text-secondary dark:text-white mb-2">Xốt Phô Mai Chan Mây</h3>
+              <p class="text-xl font-bold text-primary mb-3 price">79,000đ</p>
+              <div class="flex gap-2 mb-4 size-selector">
+                <button type="button" data-size="100g" class="px-3 py-1.5 text-sm border-2 border-primary/30 dark:border-primary/50 rounded-full hover:border-primary hover:bg-primary/10 transition-colors">100g</button>
+                <button type="button" data-size="250g" class="active px-3 py-1.5 text-sm border-2 border-primary bg-primary text-white rounded-full">250g</button>
+                <button type="button" data-size="500g" class="px-3 py-1.5 text-sm border-2 border-primary/30 dark:border-primary/50 rounded-full hover:border-primary hover:bg-primary/10 transition-colors">500g</button>
+              </div>
+              <a href="#order" class="flex items-center justify-center gap-2 w-full py-2.5 bg-secondary hover:bg-secondary-hover text-white rounded-xl font-medium transition-colors">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"/>
+                </svg>
+                Mua ngay
+              </a>
+            </div>
           </article>
 
           <!-- Product 2: Muối Ớt Xiêm Xanh -->
-          <article class="product-card animate-on-scroll" data-prices='{"100g":"35,000đ","250g":"65,000đ","500g":"115,000đ"}'>
-            <img src="images/muoi-ot-xiem-xanh.jpeg" alt="Muối Ớt Xiêm Xanh">
-            <h3>Muối Ớt Xiêm Xanh</h3>
-            <p class="price">65,000đ</p>
-            <div class="size-selector">
-              <button data-size="100g">100g</button>
-              <button data-size="250g" class="active">250g</button>
-              <button data-size="500g">500g</button>
+          <article class="group bg-white dark:bg-slate-900 rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 animate-on-scroll" data-prices='{"100g":"35,000đ","250g":"65,000đ","500g":"115,000đ"}'>
+            <div class="relative overflow-hidden aspect-square">
+              <img src="https://images.unsplash.com/photo-1596040033229-a9821ebd058d?w=600&h=600&fit=crop" alt="Muối Ớt Xiêm Xanh" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
             </div>
-            <a href="#order" class="btn btn-secondary">Mua ngay</a>
+            <div class="p-5">
+              <div class="flex items-center gap-1 mb-2">
+                <div class="flex text-accent">
+                  <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+                  <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+                  <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+                  <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+                  <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+                </div>
+                <span class="text-xs text-text-muted dark:text-slate-500">(4.9)</span>
+              </div>
+              <h3 class="font-heading text-lg font-semibold text-secondary dark:text-white mb-2">Muối Ớt Xiêm Xanh</h3>
+              <p class="text-xl font-bold text-primary mb-3 price">65,000đ</p>
+              <div class="flex gap-2 mb-4 size-selector">
+                <button type="button" data-size="100g" class="px-3 py-1.5 text-sm border-2 border-primary/30 dark:border-primary/50 rounded-full hover:border-primary hover:bg-primary/10 transition-colors">100g</button>
+                <button type="button" data-size="250g" class="active px-3 py-1.5 text-sm border-2 border-primary bg-primary text-white rounded-full">250g</button>
+                <button type="button" data-size="500g" class="px-3 py-1.5 text-sm border-2 border-primary/30 dark:border-primary/50 rounded-full hover:border-primary hover:bg-primary/10 transition-colors">500g</button>
+              </div>
+              <a href="#order" class="flex items-center justify-center gap-2 w-full py-2.5 bg-secondary hover:bg-secondary-hover text-white rounded-xl font-medium transition-colors">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"/>
+                </svg>
+                Mua ngay
+              </a>
+            </div>
           </article>
 
           <!-- Product 3: Muối Ớt Hiểm Đỏ -->
-          <article class="product-card animate-on-scroll" data-prices='{"100g":"35,000đ","250g":"65,000đ","500g":"115,000đ"}'>
-            <img src="images/muoi-ot-hiem-do.jpeg" alt="Muối Ớt Hiểm Đỏ">
-            <h3>Muối Ớt Hiểm Đỏ</h3>
-            <p class="price">65,000đ</p>
-            <div class="size-selector">
-              <button data-size="100g">100g</button>
-              <button data-size="250g" class="active">250g</button>
-              <button data-size="500g">500g</button>
+          <article class="group bg-white dark:bg-slate-900 rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 animate-on-scroll" data-prices='{"100g":"35,000đ","250g":"65,000đ","500g":"115,000đ"}'>
+            <div class="relative overflow-hidden aspect-square">
+              <img src="https://images.unsplash.com/photo-1583119022894-919a68a3d0e3?w=600&h=600&fit=crop" alt="Muối Ớt Hiểm Đỏ" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+              <div class="absolute top-3 left-3 px-3 py-1 bg-red-500 text-white text-xs font-medium rounded-full">
+                Cay nồng
+              </div>
             </div>
-            <a href="#order" class="btn btn-secondary">Mua ngay</a>
+            <div class="p-5">
+              <div class="flex items-center gap-1 mb-2">
+                <div class="flex text-accent">
+                  <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+                  <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+                  <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+                  <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+                  <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+                </div>
+                <span class="text-xs text-text-muted dark:text-slate-500">(4.8)</span>
+              </div>
+              <h3 class="font-heading text-lg font-semibold text-secondary dark:text-white mb-2">Muối Ớt Hiểm Đỏ</h3>
+              <p class="text-xl font-bold text-primary mb-3 price">65,000đ</p>
+              <div class="flex gap-2 mb-4 size-selector">
+                <button type="button" data-size="100g" class="px-3 py-1.5 text-sm border-2 border-primary/30 dark:border-primary/50 rounded-full hover:border-primary hover:bg-primary/10 transition-colors">100g</button>
+                <button type="button" data-size="250g" class="active px-3 py-1.5 text-sm border-2 border-primary bg-primary text-white rounded-full">250g</button>
+                <button type="button" data-size="500g" class="px-3 py-1.5 text-sm border-2 border-primary/30 dark:border-primary/50 rounded-full hover:border-primary hover:bg-primary/10 transition-colors">500g</button>
+              </div>
+              <a href="#order" class="flex items-center justify-center gap-2 w-full py-2.5 bg-secondary hover:bg-secondary-hover text-white rounded-xl font-medium transition-colors">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"/>
+                </svg>
+                Mua ngay
+              </a>
+            </div>
           </article>
 
           <!-- Product 4: Xốt Sate Tôm Jambon -->
-          <article class="product-card animate-on-scroll" data-prices='{"100g":"55,000đ","250g":"95,000đ","500g":"169,000đ"}'>
-            <img src="images/xot-sate-tom.jpeg" alt="Xốt Sate Tôm Jambon">
-            <h3>Xốt Sate Tôm Jambon</h3>
-            <p class="price">95,000đ</p>
-            <div class="size-selector">
-              <button data-size="100g">100g</button>
-              <button data-size="250g" class="active">250g</button>
-              <button data-size="500g">500g</button>
+          <article class="group bg-white dark:bg-slate-900 rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 animate-on-scroll" data-prices='{"100g":"55,000đ","250g":"95,000đ","500g":"169,000đ"}'>
+            <div class="relative overflow-hidden aspect-square">
+              <img src="https://images.unsplash.com/photo-1534939561126-855b8675edd7?w=600&h=600&fit=crop" alt="Xốt Sate Tôm Jambon" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+              <div class="absolute top-3 left-3 px-3 py-1 bg-accent text-white text-xs font-medium rounded-full">
+                Premium
+              </div>
             </div>
-            <a href="#order" class="btn btn-secondary">Mua ngay</a>
+            <div class="p-5">
+              <div class="flex items-center gap-1 mb-2">
+                <div class="flex text-accent">
+                  <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+                  <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+                  <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+                  <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+                  <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+                </div>
+                <span class="text-xs text-text-muted dark:text-slate-500">(5.0)</span>
+              </div>
+              <h3 class="font-heading text-lg font-semibold text-secondary dark:text-white mb-2">Xốt Sate Tôm Jambon</h3>
+              <p class="text-xl font-bold text-primary mb-3 price">95,000đ</p>
+              <div class="flex gap-2 mb-4 size-selector">
+                <button type="button" data-size="100g" class="px-3 py-1.5 text-sm border-2 border-primary/30 dark:border-primary/50 rounded-full hover:border-primary hover:bg-primary/10 transition-colors">100g</button>
+                <button type="button" data-size="250g" class="active px-3 py-1.5 text-sm border-2 border-primary bg-primary text-white rounded-full">250g</button>
+                <button type="button" data-size="500g" class="px-3 py-1.5 text-sm border-2 border-primary/30 dark:border-primary/50 rounded-full hover:border-primary hover:bg-primary/10 transition-colors">500g</button>
+              </div>
+              <a href="#order" class="flex items-center justify-center gap-2 w-full py-2.5 bg-secondary hover:bg-secondary-hover text-white rounded-xl font-medium transition-colors">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"/>
+                </svg>
+                Mua ngay
+              </a>
+            </div>
           </article>
 
           <!-- Product 5: Xốt Phô Mai Premium -->
-          <article class="product-card animate-on-scroll" data-prices='{"100g":"55,000đ","250g":"99,000đ","500g":"179,000đ"}'>
-            <img src="images/xot-pho-mai-3.jpeg" alt="Xốt Phô Mai Premium">
-            <h3>Xốt Phô Mai Premium</h3>
-            <p class="price">99,000đ</p>
-            <div class="size-selector">
-              <button data-size="100g">100g</button>
-              <button data-size="250g" class="active">250g</button>
-              <button data-size="500g">500g</button>
+          <article class="group bg-white dark:bg-slate-900 rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 animate-on-scroll" data-prices='{"100g":"55,000đ","250g":"99,000đ","500g":"179,000đ"}'>
+            <div class="relative overflow-hidden aspect-square">
+              <img src="https://images.unsplash.com/photo-1563379926898-05f4575a45d8?w=600&h=600&fit=crop" alt="Xốt Phô Mai Premium" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+              <div class="absolute top-3 left-3 px-3 py-1 bg-accent text-white text-xs font-medium rounded-full">
+                Premium
+              </div>
             </div>
-            <a href="#order" class="btn btn-secondary">Mua ngay</a>
+            <div class="p-5">
+              <div class="flex items-center gap-1 mb-2">
+                <div class="flex text-accent">
+                  <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+                  <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+                  <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+                  <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+                  <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+                </div>
+                <span class="text-xs text-text-muted dark:text-slate-500">(5.0)</span>
+              </div>
+              <h3 class="font-heading text-lg font-semibold text-secondary dark:text-white mb-2">Xốt Phô Mai Premium</h3>
+              <p class="text-xl font-bold text-primary mb-3 price">99,000đ</p>
+              <div class="flex gap-2 mb-4 size-selector">
+                <button type="button" data-size="100g" class="px-3 py-1.5 text-sm border-2 border-primary/30 dark:border-primary/50 rounded-full hover:border-primary hover:bg-primary/10 transition-colors">100g</button>
+                <button type="button" data-size="250g" class="active px-3 py-1.5 text-sm border-2 border-primary bg-primary text-white rounded-full">250g</button>
+                <button type="button" data-size="500g" class="px-3 py-1.5 text-sm border-2 border-primary/30 dark:border-primary/50 rounded-full hover:border-primary hover:bg-primary/10 transition-colors">500g</button>
+              </div>
+              <a href="#order" class="flex items-center justify-center gap-2 w-full py-2.5 bg-secondary hover:bg-secondary-hover text-white rounded-xl font-medium transition-colors">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"/>
+                </svg>
+                Mua ngay
+              </a>
+            </div>
           </article>
 
           <!-- Product 6: Combo Gia Vị -->
-          <article class="product-card animate-on-scroll" data-prices='{"3món":"199,000đ","5món":"299,000đ","full":"399,000đ"}'>
-            <img src="images/products-all.png" alt="Combo Gia Vị Chan Mây">
-            <h3>Combo Gia Vị Chan Mây</h3>
-            <p class="price">299,000đ</p>
-            <div class="size-selector">
-              <button data-size="3món">3 món</button>
-              <button data-size="5món" class="active">5 món</button>
-              <button data-size="full">Full set</button>
+          <article class="group bg-white dark:bg-slate-900 rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 animate-on-scroll" data-prices='{"3món":"199,000đ","5món":"299,000đ","full":"399,000đ"}'>
+            <div class="relative overflow-hidden aspect-square">
+              <img src="https://images.unsplash.com/photo-1506368249639-73a05d6f6488?w=600&h=600&fit=crop" alt="Combo Gia Vị Chan Mây" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+              <div class="absolute top-3 left-3 px-3 py-1 bg-success text-white text-xs font-medium rounded-full">
+                Tiết kiệm
+              </div>
             </div>
-            <a href="#order" class="btn btn-secondary">Mua ngay</a>
+            <div class="p-5">
+              <div class="flex items-center gap-1 mb-2">
+                <div class="flex text-accent">
+                  <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+                  <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+                  <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+                  <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+                  <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+                </div>
+                <span class="text-xs text-text-muted dark:text-slate-500">(5.0)</span>
+              </div>
+              <h3 class="font-heading text-lg font-semibold text-secondary dark:text-white mb-2">Combo Gia Vị Chan Mây</h3>
+              <p class="text-xl font-bold text-primary mb-3 price">299,000đ</p>
+              <div class="flex gap-2 mb-4 size-selector">
+                <button type="button" data-size="3món" class="px-3 py-1.5 text-sm border-2 border-primary/30 dark:border-primary/50 rounded-full hover:border-primary hover:bg-primary/10 transition-colors">3 món</button>
+                <button type="button" data-size="5món" class="active px-3 py-1.5 text-sm border-2 border-primary bg-primary text-white rounded-full">5 món</button>
+                <button type="button" data-size="full" class="px-3 py-1.5 text-sm border-2 border-primary/30 dark:border-primary/50 rounded-full hover:border-primary hover:bg-primary/10 transition-colors">Full</button>
+              </div>
+              <a href="#order" class="flex items-center justify-center gap-2 w-full py-2.5 bg-secondary hover:bg-secondary-hover text-white rounded-xl font-medium transition-colors">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"/>
+                </svg>
+                Mua ngay
+              </a>
+            </div>
           </article>
         </div>
       </div>
     </section>
 
     <!-- Inspiration Section -->
-    <section id="inspiration" class="inspiration">
-      <div class="container">
-        <h2 class="section-title animate-on-scroll">Gợi ý món ngon</h2>
-        <p class="section-subtitle animate-on-scroll">Biến mọi bữa ăn thành đại tiệc với Chan Mây Foods</p>
-        <div class="inspiration-grid">
-          <div class="inspiration-item animate-on-scroll">
-            <img src="images/food-noodles.jpeg" alt="Mì trộn xốt phô mai">
-            <div class="inspiration-overlay">
-              <span>Mì trộn xốt phô mai</span>
+    <section id="inspiration" class="py-16 md:py-24 bg-white dark:bg-slate-900">
+      <div class="max-w-6xl mx-auto px-4">
+        <h2 class="font-heading text-2xl sm:text-3xl md:text-4xl font-semibold text-secondary dark:text-primary text-center mb-4 animate-on-scroll">
+          Gợi ý món ngon
+        </h2>
+        <p class="text-text-muted dark:text-slate-400 text-center mb-12 animate-on-scroll">
+          Biến mọi bữa ăn thành đại tiệc với Chan Mây Foods
+        </p>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
+          <div class="group relative rounded-2xl overflow-hidden aspect-[4/3] animate-on-scroll cursor-pointer">
+            <img src="https://images.unsplash.com/photo-1569718212165-3a8278d5f624?w=400&h=300&fit=crop" alt="Mì trộn xốt phô mai" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+            <div class="absolute bottom-4 left-4 right-4">
+              <span class="text-white font-medium text-lg">Mì trộn xốt phô mai</span>
             </div>
           </div>
-          <div class="inspiration-item animate-on-scroll">
-            <img src="images/xot-sate-bowl.jpeg" alt="Cơm trộn sate tôm">
-            <div class="inspiration-overlay">
-              <span>Cơm trộn sate tôm</span>
+
+          <div class="group relative rounded-2xl overflow-hidden aspect-[4/3] animate-on-scroll cursor-pointer">
+            <img src="https://images.unsplash.com/photo-1547592180-85f173990554?w=400&h=300&fit=crop" alt="Cơm trộn sate tôm" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+            <div class="absolute bottom-4 left-4 right-4">
+              <span class="text-white font-medium text-lg">Cơm trộn sate tôm</span>
             </div>
           </div>
-          <div class="inspiration-item animate-on-scroll">
-            <img src="images/xot-pho-mai-1.jpeg" alt="Bánh mì chấm xốt">
-            <div class="inspiration-overlay">
-              <span>Bánh mì chấm xốt</span>
+
+          <div class="group relative rounded-2xl overflow-hidden aspect-[4/3] animate-on-scroll cursor-pointer">
+            <img src="https://images.unsplash.com/photo-1612240498936-65f5101365d2?w=1920&h=1080&fit=crop" alt="Bánh mì chấm xốt" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+            <div class="absolute bottom-4 left-4 right-4">
+              <span class="text-white font-medium text-lg">Bánh mì chấm xốt</span>
             </div>
           </div>
         </div>
@@ -304,121 +511,314 @@
     </section>
 
     <!-- Story Section -->
-    <section id="story" class="story">
-      <div class="container">
-        <div class="story-content animate-on-scroll">
-          <div class="story-text">
-            <h2>Câu chuyện Chan Mây</h2>
-            <p>Chan Mây Foods ra đời từ tình yêu với ẩm thực Việt Nam và khát khao mang đến những sản phẩm gia vị chất lượng cao cho mọi gia đình.</p>
-            <p>Với công thức gia truyền qua 3 thế hệ, chúng tôi tự hào tạo ra những loại nước xốt và muối ớt với hương vị đậm đà, nguyên liệu tự nhiên 100%, không chất bảo quản.</p>
-            <p><strong>"Chan thôi không cần nêm nếm"</strong> - đó là cam kết của chúng tôi về chất lượng sản phẩm.</p>
+    <section id="story" class="py-16 md:py-24 bg-cream dark:bg-slate-950">
+      <div class="max-w-6xl mx-auto px-4">
+        <div class="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
+          <div class="animate-on-scroll">
+            <h2 class="font-heading text-2xl sm:text-3xl md:text-4xl font-semibold text-secondary dark:text-primary mb-6">
+              Câu chuyện Chan Mây
+            </h2>
+            <p class="text-text-muted dark:text-slate-400 mb-4">
+              Chan Mây Foods ra đời từ tình yêu với ẩm thực Việt Nam và khát khao mang đến những sản phẩm gia vị chất lượng cao cho mọi gia đình.
+            </p>
+            <p class="text-text-muted dark:text-slate-400 mb-4">
+              Với công thức gia truyền qua 3 thế hệ, chúng tôi tự hào tạo ra những loại nước xốt và muối ớt với hương vị đậm đà, nguyên liệu tự nhiên 100%, không chất bảo quản.
+            </p>
+            <p class="text-secondary dark:text-primary font-semibold text-lg">
+              "Chan thôi không cần nêm nếm" - đó là cam kết của chúng tôi về chất lượng sản phẩm.
+            </p>
           </div>
-          <div class="story-image">
-            <img src="images/xot-pho-mai-2.jpeg" alt="Sản phẩm Chan Mây Foods">
+          <div class="animate-on-scroll">
+            <img src="https://images.unsplash.com/photo-1631452180519-c014fe946bc7?w=600&h=600&fit=crop" alt="Sản phẩm Chan Mây Foods" class="rounded-2xl shadow-xl w-full">
           </div>
         </div>
       </div>
     </section>
 
     <!-- Reviews Section -->
-    <section id="reviews" class="reviews">
-      <div class="container">
-        <h2 class="section-title animate-on-scroll">Khách hàng nói gì</h2>
-        <div class="reviews-wrapper">
-          <button class="reviews-nav reviews-prev" aria-label="Previous">‹</button>
-          <div class="reviews-container">
-            <div class="review-card">
-              <div class="stars">★★★★★</div>
-              <p class="review-text">"Xốt phô mai ngon xuất sắc! Con tôi mê lắm, bữa nào cũng đòi ăn mì trộn xốt phô mai."</p>
-              <p class="reviewer-name">Chị Lan - Hà Nội</p>
+    <section id="reviews" class="py-16 md:py-24 bg-cream-dark dark:bg-slate-900">
+      <div class="max-w-6xl mx-auto px-4">
+        <h2 class="font-heading text-2xl sm:text-3xl md:text-4xl font-semibold text-secondary dark:text-primary text-center mb-12 animate-on-scroll">
+          Khách hàng nói gì
+        </h2>
+
+        <div class="relative">
+          <!-- Navigation Arrows -->
+          <button type="button" aria-label="Previous review" class="reviews-prev hidden md:flex absolute -left-4 top-1/2 -translate-y-1/2 z-10 w-10 h-10 items-center justify-center rounded-full bg-white dark:bg-slate-800 shadow-lg hover:shadow-xl transition-shadow">
+            <svg class="w-5 h-5 text-secondary dark:text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+            </svg>
+          </button>
+
+          <button type="button" aria-label="Next review" class="reviews-next hidden md:flex absolute -right-4 top-1/2 -translate-y-1/2 z-10 w-10 h-10 items-center justify-center rounded-full bg-white dark:bg-slate-800 shadow-lg hover:shadow-xl transition-shadow">
+            <svg class="w-5 h-5 text-secondary dark:text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+            </svg>
+          </button>
+
+          <!-- Reviews Container -->
+          <div class="reviews-container flex gap-4 overflow-x-auto snap-x snap-mandatory pb-4 scrollbar-hide">
+            <!-- Review 1 -->
+            <div class="review-card flex-shrink-0 w-[300px] md:w-[340px] snap-start bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-md">
+              <div class="text-4xl text-primary/20 dark:text-primary/30 font-serif mb-2">"</div>
+              <p class="text-text-muted dark:text-slate-300 mb-4 italic">
+                Xốt phô mai ngon xuất sắc! Con tôi mê lắm, bữa nào cũng đòi ăn mì trộn xốt phô mai.
+              </p>
+              <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-full bg-primary/20 dark:bg-primary/30 flex items-center justify-center">
+                  <span class="text-primary font-semibold">L</span>
+                </div>
+                <div>
+                  <p class="font-semibold text-secondary dark:text-white">Chị Lan</p>
+                  <p class="text-sm text-text-muted dark:text-slate-500">Hà Nội</p>
+                </div>
+                <div class="ml-auto flex text-accent">
+                  <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+                  <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+                  <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+                  <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+                  <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+                </div>
+              </div>
             </div>
-            <div class="review-card">
-              <div class="stars">★★★★★</div>
-              <p class="review-text">"Muối ớt xiêm xanh cay vừa phải, thơm lắm. Chấm trái cây ngon không thể cưỡng!"</p>
-              <p class="reviewer-name">Anh Minh - TP.HCM</p>
+
+            <!-- Review 2 -->
+            <div class="review-card flex-shrink-0 w-[300px] md:w-[340px] snap-start bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-md">
+              <div class="text-4xl text-primary/20 dark:text-primary/30 font-serif mb-2">"</div>
+              <p class="text-text-muted dark:text-slate-300 mb-4 italic">
+                Muối ớt xiêm xanh cay vừa phải, thơm lắm. Chấm trái cây ngon không thể cưỡng!
+              </p>
+              <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-full bg-secondary/20 dark:bg-secondary/30 flex items-center justify-center">
+                  <span class="text-secondary dark:text-primary font-semibold">M</span>
+                </div>
+                <div>
+                  <p class="font-semibold text-secondary dark:text-white">Anh Minh</p>
+                  <p class="text-sm text-text-muted dark:text-slate-500">TP.HCM</p>
+                </div>
+                <div class="ml-auto flex text-accent">
+                  <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+                  <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+                  <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+                  <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+                  <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+                </div>
+              </div>
             </div>
-            <div class="review-card">
-              <div class="stars">★★★★★</div>
-              <p class="review-text">"Sate tôm jambon béo ngậy, chan cơm nóng thì hết ý. Đúng là chan thôi không cần nêm nếm!"</p>
-              <p class="reviewer-name">Chị Hương - Đà Nẵng</p>
+
+            <!-- Review 3 -->
+            <div class="review-card flex-shrink-0 w-[300px] md:w-[340px] snap-start bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-md">
+              <div class="text-4xl text-primary/20 dark:text-primary/30 font-serif mb-2">"</div>
+              <p class="text-text-muted dark:text-slate-300 mb-4 italic">
+                Sate tôm jambon béo ngậy, chan cơm nóng thì hết ý. Đúng là chan thôi không cần nêm nếm!
+              </p>
+              <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-full bg-accent/20 dark:bg-accent/30 flex items-center justify-center">
+                  <span class="text-accent font-semibold">H</span>
+                </div>
+                <div>
+                  <p class="font-semibold text-secondary dark:text-white">Chị Hương</p>
+                  <p class="text-sm text-text-muted dark:text-slate-500">Đà Nẵng</p>
+                </div>
+                <div class="ml-auto flex text-accent">
+                  <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+                  <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+                  <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+                  <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+                  <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+                </div>
+              </div>
             </div>
-            <div class="review-card">
-              <div class="stars">★★★★★</div>
-              <p class="review-text">"Đã mua lần thứ 5, lần nào cũng hài lòng. Giao hàng nhanh, đóng gói cẩn thận."</p>
-              <p class="reviewer-name">Anh Tuấn - Cần Thơ</p>
+
+            <!-- Review 4 -->
+            <div class="review-card flex-shrink-0 w-[300px] md:w-[340px] snap-start bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-md">
+              <div class="text-4xl text-primary/20 dark:text-primary/30 font-serif mb-2">"</div>
+              <p class="text-text-muted dark:text-slate-300 mb-4 italic">
+                Đã mua lần thứ 5, lần nào cũng hài lòng. Giao hàng nhanh, đóng gói cẩn thận.
+              </p>
+              <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-full bg-success/20 dark:bg-success/30 flex items-center justify-center">
+                  <span class="text-success font-semibold">T</span>
+                </div>
+                <div>
+                  <p class="font-semibold text-secondary dark:text-white">Anh Tuấn</p>
+                  <p class="text-sm text-text-muted dark:text-slate-500">Cần Thơ</p>
+                </div>
+                <div class="ml-auto flex text-accent">
+                  <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+                  <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+                  <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+                  <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+                  <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+                </div>
+              </div>
             </div>
-            <div class="review-card">
-              <div class="stars">★★★★★</div>
-              <p class="review-text">"Combo gia vị rất đáng tiền! Có đủ loại để thử, cả nhà ai cũng thích."</p>
-              <p class="reviewer-name">Chị Mai - Hải Phòng</p>
+
+            <!-- Review 5 -->
+            <div class="review-card flex-shrink-0 w-[300px] md:w-[340px] snap-start bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-md">
+              <div class="text-4xl text-primary/20 dark:text-primary/30 font-serif mb-2">"</div>
+              <p class="text-text-muted dark:text-slate-300 mb-4 italic">
+                Combo gia vị rất đáng tiền! Có đủ loại để thử, cả nhà ai cũng thích.
+              </p>
+              <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-full bg-primary/20 dark:bg-primary/30 flex items-center justify-center">
+                  <span class="text-primary font-semibold">M</span>
+                </div>
+                <div>
+                  <p class="font-semibold text-secondary dark:text-white">Chị Mai</p>
+                  <p class="text-sm text-text-muted dark:text-slate-500">Hải Phòng</p>
+                </div>
+                <div class="ml-auto flex text-accent">
+                  <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+                  <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+                  <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+                  <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+                  <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+                </div>
+              </div>
             </div>
           </div>
-          <button class="reviews-nav reviews-next" aria-label="Next">›</button>
+
+          <!-- Pagination Dots -->
+          <div class="flex justify-center gap-2 mt-6">
+            <button type="button" aria-label="Review 1" class="review-dot w-2 h-2 rounded-full bg-primary transition-all" data-index="0"></button>
+            <button type="button" aria-label="Review 2" class="review-dot w-2 h-2 rounded-full bg-primary/30 dark:bg-primary/50 transition-all" data-index="1"></button>
+            <button type="button" aria-label="Review 3" class="review-dot w-2 h-2 rounded-full bg-primary/30 dark:bg-primary/50 transition-all" data-index="2"></button>
+            <button type="button" aria-label="Review 4" class="review-dot w-2 h-2 rounded-full bg-primary/30 dark:bg-primary/50 transition-all" data-index="3"></button>
+            <button type="button" aria-label="Review 5" class="review-dot w-2 h-2 rounded-full bg-primary/30 dark:bg-primary/50 transition-all" data-index="4"></button>
+          </div>
         </div>
       </div>
     </section>
 
     <!-- Order Section -->
-    <section id="order" class="order">
-      <div class="container">
-        <div class="order-content animate-on-scroll">
-          <h2>Đặt hàng ngay</h2>
-          <p>Mua sắm dễ dàng trên các sàn thương mại điện tử</p>
-          <div class="order-buttons">
-            <a href="#" class="btn btn-shopee" data-deeplink="shopee">
-              <span>🛒</span> Shopee
-            </a>
-            <a href="#" class="btn btn-tiktok" data-deeplink="tiktok">
-              <span>🎵</span> TikTok Shop
-            </a>
-          </div>
-          <div class="order-contact">
-            <p>Hoặc liên hệ trực tiếp:</p>
-            <a href="tel:0123456789" class="phone-number">📞 0123 456 789</a>
-          </div>
+    <section id="order" class="py-16 md:py-24 bg-gradient-to-br from-secondary via-secondary to-[#6B1F26] dark:from-slate-900 dark:via-slate-800 dark:to-slate-900 text-white">
+      <div class="max-w-4xl mx-auto px-4 text-center">
+        <h2 class="font-heading text-2xl sm:text-3xl md:text-4xl font-semibold mb-4 animate-on-scroll">
+          Đặt hàng ngay
+        </h2>
+        <p class="text-white/80 mb-8 animate-on-scroll">
+          Mua sắm dễ dàng trên các sàn thương mại điện tử
+        </p>
+
+        <div class="flex flex-col sm:flex-row gap-4 justify-center mb-8 animate-on-scroll">
+          <!-- Shopee Button -->
+          <a href="#" data-deeplink="shopee" class="flex items-center justify-center gap-3 px-8 py-4 bg-[#EE4D2D] hover:bg-[#D73211] rounded-xl font-semibold text-lg transition-all hover:-translate-y-1 hover:shadow-lg">
+            <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.121l-6.869 4.326-2.96-.924c-.64-.203-.658-.64.135-.954l11.566-4.458c.538-.196 1.006.128.832.94z"/>
+            </svg>
+            Shopee
+          </a>
+
+          <!-- TikTok Button -->
+          <a href="#" data-deeplink="tiktok" class="flex items-center justify-center gap-3 px-8 py-4 bg-black hover:bg-gray-900 rounded-xl font-semibold text-lg transition-all hover:-translate-y-1 hover:shadow-lg">
+            <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/>
+            </svg>
+            TikTok Shop
+          </a>
+        </div>
+
+        <div class="flex items-center gap-4 justify-center mb-6 animate-on-scroll">
+          <div class="h-px flex-1 max-w-[100px] bg-white/20"></div>
+          <span class="text-white/60 text-sm">hoặc</span>
+          <div class="h-px flex-1 max-w-[100px] bg-white/20"></div>
+        </div>
+
+        <div class="animate-on-scroll">
+          <p class="text-white/80 mb-2">Liên hệ trực tiếp:</p>
+          <a href="tel:0123456789" class="inline-flex items-center gap-2 text-2xl font-bold hover:text-primary transition-colors">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+            </svg>
+            0123 456 789
+          </a>
         </div>
       </div>
     </section>
   </main>
 
   <!-- Footer -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-content">
-        <div class="footer-brand">
-          <img src="images/logo.jpeg" alt="Chan Mây Foods" class="footer-logo">
-          <p>Vị Ngon Trứ Danh</p>
+  <footer class="bg-slate-900 dark:bg-slate-950 text-white py-12">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+        <!-- Brand -->
+        <div class="text-center md:text-left">
+          <img src="https://images.unsplash.com/photo-1472476443507-c7a5948772fc?w=80&h=80&fit=crop" alt="Chan Mây Foods" class="w-16 h-16 rounded-full mx-auto md:mx-0 mb-3">
+          <p class="font-heading text-lg text-primary">Vị Ngon Trứ Danh</p>
         </div>
-        <div class="footer-contact">
-          <h4>Liên hệ</h4>
-          <p>📞 0123 456 789</p>
-          <p>✉️ contact@chanmayfoods.vn</p>
-          <p>📍 TP. Hồ Chí Minh, Việt Nam</p>
+
+        <!-- Contact -->
+        <div class="text-center md:text-left">
+          <h4 class="font-semibold mb-4">Liên hệ</h4>
+          <div class="space-y-2 text-slate-400">
+            <p class="flex items-center gap-2 justify-center md:justify-start">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+              </svg>
+              0123 456 789
+            </p>
+            <p class="flex items-center gap-2 justify-center md:justify-start">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+              </svg>
+              contact@chanmayfoods.vn
+            </p>
+            <p class="flex items-center gap-2 justify-center md:justify-start">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+              </svg>
+              TP. Hồ Chí Minh, Việt Nam
+            </p>
+          </div>
         </div>
-        <div class="footer-social">
-          <h4>Theo dõi chúng tôi</h4>
-          <div class="social-links">
-            <a href="#" data-deeplink="facebook" aria-label="Facebook">📘</a>
-            <a href="#" data-deeplink="instagram" aria-label="Instagram">📷</a>
-            <a href="#" data-deeplink="tiktok" aria-label="TikTok">🎵</a>
+
+        <!-- Social -->
+        <div class="text-center md:text-left">
+          <h4 class="font-semibold mb-4">Theo dõi chúng tôi</h4>
+          <div class="flex gap-4 justify-center md:justify-start">
+            <a href="#" data-deeplink="facebook" class="w-10 h-10 rounded-full bg-slate-800 hover:bg-[#1877F2] flex items-center justify-center transition-colors" aria-label="Facebook">
+              <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+              </svg>
+            </a>
+            <a href="#" data-deeplink="instagram" class="w-10 h-10 rounded-full bg-slate-800 hover:bg-gradient-to-br hover:from-[#833AB4] hover:via-[#FD1D1D] hover:to-[#F77737] flex items-center justify-center transition-all" aria-label="Instagram">
+              <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+              </svg>
+            </a>
+            <a href="#" data-deeplink="tiktok" class="w-10 h-10 rounded-full bg-slate-800 hover:bg-black flex items-center justify-center transition-colors" aria-label="TikTok">
+              <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/>
+              </svg>
+            </a>
           </div>
         </div>
       </div>
-      <div class="footer-bottom">
+
+      <div class="border-t border-slate-800 pt-6 text-center text-slate-500 text-sm">
         <p>© 2024 Chan Mây Foods. Vị Ngon Trứ Danh.</p>
       </div>
     </div>
   </footer>
 
   <!-- Floating Buttons -->
-  <div class="floating-buttons">
-    <a href="#" class="btn-zalo" data-deeplink="zalo" aria-label="Chat Zalo">
-      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v6h-2zm0 8h2v2h-2z"/></svg>
-      <span>Zalo</span>
+  <div class="fixed bottom-6 right-4 flex flex-col gap-3 z-40">
+    <!-- Zalo -->
+    <a href="#" data-deeplink="zalo" class="group flex items-center gap-2 px-4 py-3 bg-[#0068FF] text-white rounded-full shadow-lg hover:shadow-xl hover:scale-105 transition-all" aria-label="Chat Zalo">
+      <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.568 14.618c-.254.702-.93 1.156-1.69 1.156h-1.326c-.168 0-.332-.056-.465-.16l-2.205-1.72-.004-.003v2.03c0 .44-.356.796-.797.796h-.654a.797.797 0 01-.797-.797V9.797c0-.44.357-.797.797-.797h.654c.44 0 .797.357.797.797v2.03l2.209-1.723a.796.796 0 01.465-.16h1.326c.759 0 1.436.454 1.69 1.156a1.8 1.8 0 01-.305 1.85l-1.89 2.168 1.89 2.168a1.8 1.8 0 01.305 1.85z"/>
+      </svg>
+      <span class="hidden sm:inline font-medium">Zalo</span>
     </a>
-    <a href="#" class="btn-messenger" data-deeplink="messenger" aria-label="Chat Messenger">
-      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.36 2 2 6.13 2 11.7c0 2.91 1.19 5.44 3.14 7.17.16.14.26.35.27.57l.05 1.78c.02.63.65 1.03 1.24.79l1.99-.83c.17-.07.36-.09.54-.05.88.21 1.8.32 2.77.32 5.64 0 10-4.13 10-9.7S17.64 2 12 2z"/></svg>
-      <span>Messenger</span>
+
+    <!-- Messenger -->
+    <a href="#" data-deeplink="messenger" class="group flex items-center gap-2 px-4 py-3 bg-gradient-to-r from-[#0084FF] to-[#00C6FF] text-white rounded-full shadow-lg hover:shadow-xl hover:scale-105 transition-all" aria-label="Chat Messenger">
+      <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M12 0C5.373 0 0 4.974 0 11.111c0 3.498 1.744 6.614 4.469 8.654V24l4.088-2.242c1.092.301 2.246.464 3.443.464 6.627 0 12-4.975 12-11.111S18.627 0 12 0zm1.191 14.963l-3.055-3.26-5.963 3.26L10.732 8l3.131 3.259L19.752 8l-6.561 6.963z"/>
+      </svg>
+      <span class="hidden sm:inline font-medium">Messenger</span>
     </a>
   </div>
 
