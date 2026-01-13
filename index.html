@@ -198,57 +198,61 @@
     <!-- USP Section - Bento Grid -->
     <section id="usp" class="py-16 md:py-24 bg-white dark:bg-slate-900">
       <div class="max-w-6xl mx-auto px-4">
-        <h2 class="font-heading text-2xl sm:text-3xl md:text-4xl font-semibold text-secondary dark:text-primary text-center mb-12 animate-on-scroll">
+        <h2 class="font-heading text-2xl sm:text-3xl md:text-4xl font-semibold text-secondary dark:text-primary text-center mb-4 animate-on-scroll">
           Tại sao chọn Chan Mây?
         </h2>
+        <p class="text-text-muted dark:text-slate-400 text-center mb-12 max-w-2xl mx-auto animate-on-scroll">
+          Chất lượng được chứng minh qua từng sản phẩm
+        </p>
 
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
-          <!-- Featured Card (larger) -->
-          <div class="col-span-2 row-span-2 p-6 md:p-8 rounded-2xl bg-gradient-to-br from-primary/10 to-secondary/10 dark:from-primary/20 dark:to-secondary/20 border border-primary/20 dark:border-primary/30 hover:shadow-xl transition-all duration-300 cursor-pointer animate-on-scroll">
-            <div class="w-16 h-16 mb-4 rounded-2xl bg-primary/20 dark:bg-primary/30 flex items-center justify-center">
+        <!-- Icon Cards Grid - 4 equal cards -->
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
+          <!-- Card 1: 100% Tự Nhiên -->
+          <div class="group p-6 md:p-8 rounded-2xl bg-gradient-to-br from-primary/5 to-primary/10 dark:from-primary/10 dark:to-primary/20 border border-primary/20 hover:border-primary/40 hover:shadow-xl transition-all duration-300 text-center animate-on-scroll">
+            <div class="w-16 h-16 mx-auto mb-4 rounded-2xl bg-primary/20 dark:bg-primary/30 flex items-center justify-center group-hover:scale-110 transition-transform">
               <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/>
               </svg>
             </div>
-            <h3 class="font-heading text-xl md:text-2xl font-semibold text-secondary dark:text-white mb-2">100% Tự Nhiên</h3>
-            <p class="text-text-muted dark:text-slate-400">Nguyên liệu tươi sạch, không chất tạo màu, không phẩm màu công nghiệp. An toàn cho cả gia đình.</p>
+            <div class="font-heading text-3xl md:text-4xl font-bold text-primary mb-2">100%</div>
+            <h3 class="font-heading text-lg font-semibold text-secondary dark:text-white mb-2">Tự Nhiên</h3>
+            <p class="text-sm text-text-muted dark:text-slate-400">Nguyên liệu tươi sạch, không phẩm màu công nghiệp</p>
           </div>
 
-          <!-- Card 2 -->
-          <div class="p-5 md:p-6 rounded-2xl bg-cream-dark dark:bg-slate-800 hover:shadow-lg transition-all duration-300 cursor-pointer animate-on-scroll">
-            <div class="w-12 h-12 mb-3 rounded-xl bg-secondary/10 dark:bg-secondary/20 flex items-center justify-center">
-              <svg class="w-6 h-6 text-secondary dark:text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <!-- Card 2: 3+ Thế Hệ -->
+          <div class="group p-6 md:p-8 rounded-2xl bg-gradient-to-br from-secondary/5 to-secondary/10 dark:from-secondary/10 dark:to-secondary/20 border border-secondary/20 hover:border-secondary/40 hover:shadow-xl transition-all duration-300 text-center animate-on-scroll">
+            <div class="w-16 h-16 mx-auto mb-4 rounded-2xl bg-secondary/20 dark:bg-secondary/30 flex items-center justify-center group-hover:scale-110 transition-transform">
+              <svg class="w-8 h-8 text-secondary dark:text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
               </svg>
             </div>
-            <h3 class="font-heading text-lg font-semibold text-secondary dark:text-white mb-1">Công thức gia truyền</h3>
-            <p class="text-sm text-text-muted dark:text-slate-400">Bí quyết hương vị từ 3 thế hệ</p>
+            <div class="font-heading text-3xl md:text-4xl font-bold text-secondary dark:text-primary mb-2">3+</div>
+            <h3 class="font-heading text-lg font-semibold text-secondary dark:text-white mb-2">Thế Hệ</h3>
+            <p class="text-sm text-text-muted dark:text-slate-400">Công thức gia truyền, bí quyết hương vị độc đáo</p>
           </div>
 
-          <!-- Card 3 -->
-          <div class="p-5 md:p-6 rounded-2xl bg-cream-dark dark:bg-slate-800 hover:shadow-lg transition-all duration-300 cursor-pointer animate-on-scroll">
-            <div class="w-12 h-12 mb-3 rounded-xl bg-success/10 dark:bg-success/20 flex items-center justify-center">
-              <svg class="w-6 h-6 text-success" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <!-- Card 3: 0% Bảo Quản -->
+          <div class="group p-6 md:p-8 rounded-2xl bg-gradient-to-br from-success/5 to-success/10 dark:from-success/10 dark:to-success/20 border border-success/20 hover:border-success/40 hover:shadow-xl transition-all duration-300 text-center animate-on-scroll">
+            <div class="w-16 h-16 mx-auto mb-4 rounded-2xl bg-success/20 dark:bg-success/30 flex items-center justify-center group-hover:scale-110 transition-transform">
+              <svg class="w-8 h-8 text-success" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
               </svg>
             </div>
-            <h3 class="font-heading text-lg font-semibold text-secondary dark:text-white mb-1">Không chất bảo quản</h3>
-            <p class="text-sm text-text-muted dark:text-slate-400">An toàn cho cả gia đình</p>
+            <div class="font-heading text-3xl md:text-4xl font-bold text-success mb-2">0%</div>
+            <h3 class="font-heading text-lg font-semibold text-secondary dark:text-white mb-2">Chất Bảo Quản</h3>
+            <p class="text-sm text-text-muted dark:text-slate-400">An toàn tuyệt đối cho cả gia đình</p>
           </div>
 
-          <!-- Card 4 -->
-          <div class="col-span-2 p-5 md:p-6 rounded-2xl bg-gradient-to-r from-secondary/10 to-primary/10 dark:from-secondary/20 dark:to-primary/20 border border-secondary/20 dark:border-secondary/30 hover:shadow-lg transition-all duration-300 cursor-pointer animate-on-scroll">
-            <div class="flex items-start gap-4">
-              <div class="w-12 h-12 rounded-xl bg-accent/20 flex items-center justify-center flex-shrink-0">
-                <svg class="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"/>
-                </svg>
-              </div>
-              <div>
-                <h3 class="font-heading text-lg font-semibold text-secondary dark:text-white mb-1">Hương vị đậm đà</h3>
-                <p class="text-sm text-text-muted dark:text-slate-400">"Chan thôi, không cần nêm nếm" - Cam kết của chúng tôi về chất lượng</p>
-              </div>
+          <!-- Card 4: 5 Sao -->
+          <div class="group p-6 md:p-8 rounded-2xl bg-gradient-to-br from-accent/5 to-accent/10 dark:from-accent/10 dark:to-accent/20 border border-accent/20 hover:border-accent/40 hover:shadow-xl transition-all duration-300 text-center animate-on-scroll">
+            <div class="w-16 h-16 mx-auto mb-4 rounded-2xl bg-accent/20 dark:bg-accent/30 flex items-center justify-center group-hover:scale-110 transition-transform">
+              <svg class="w-8 h-8 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"/>
+              </svg>
             </div>
+            <div class="font-heading text-3xl md:text-4xl font-bold text-accent mb-2">5★</div>
+            <h3 class="font-heading text-lg font-semibold text-secondary dark:text-white mb-2">Đánh Giá</h3>
+            <p class="text-sm text-text-muted dark:text-slate-400">"Chan thôi, không cần nêm nếm"</p>
           </div>
         </div>
       </div>
