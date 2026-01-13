@@ -24,6 +24,9 @@ function initSmoothScroll() {
 
   document.querySelectorAll('a[href^="#"]').forEach(link => {
     link.addEventListener('click', (e) => {
+      // Skip if this is an order button (handled by modal)
+      if (link.classList.contains('order-btn') || link.classList.contains('bg-primary')) return;
+
       const targetId = link.getAttribute('href');
       if (targetId === '#') return;
 
