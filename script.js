@@ -25,7 +25,10 @@ function initSmoothScroll() {
   document.querySelectorAll('a[href^="#"]').forEach(link => {
     link.addEventListener('click', (e) => {
       // Skip if this is an order button (handled by modal) - but still prevent default scroll
-      if (link.classList.contains('order-btn') || link.classList.contains('bg-primary')) {
+      // Only block: order-btn class OR (bg-primary class AND href is #order)
+      const isOrderBtn = link.classList.contains('order-btn');
+      const isOrderLink = link.classList.contains('bg-primary') && link.getAttribute('href') === '#order';
+      if (isOrderBtn || isOrderLink) {
         e.preventDefault();
         return;
       }
