@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initDeeplinks();
   initSmoothScroll();
   initOrderModal();
+  initActiveNavigation();
 });
 
 /* ===========================================
@@ -401,3 +402,59 @@ function initOrderModal() {
     }
   }, { passive: true });
 })();
+
+/* ===========================================
+   Active Navigation
+   Highlights nav link based on visible section
+   =========================================== */
+function initActiveNavigation() {
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('nav a[href^="#"]:not([href="#order"])');
+  const mobileNavLinks = document.querySelectorAll('.nav-menu a[href^="#"]:not([href="#order"])');
+
+  if (!sections.length || !navLinks.length) return;
+
+  // Active class styles
+  const activeClasses = ['text-primary', 'font-semibold'];
+  const inactiveClasses = ['text-text-primary', 'dark:text-slate-200'];
+
+  function setActiveLink(sectionId) {
+    // Update desktop nav
+    navLinks.forEach(link => {
+      const href = link.getAttribute('href');
+      if (href === `#${sectionId}`) {
+        link.classList.remove(...inactiveClasses);
+        link.classList.add(...activeClasses);
+      } else {
+        link.classList.remove(...activeClasses);
+        link.classList.add(...inactiveClasses);
+      }
+    });
+
+    // Update mobile nav
+    mobileNavLinks.forEach(link => {
+      const href = link.getAttribute('href');
+      if (href === `#${sectionId}`) {
+        link.classList.remove(...inactiveClasses);
+        link.classList.add(...activeClasses);
+      } else {
+        link.classList.remove(...activeClasses);
+        link.classList.add(...inactiveClasses);
+      }
+    });
+  }
+
+  // Use Intersection Observer
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        setActiveLink(entry.target.id);
+      }
+    });
+  }, {
+    rootMargin: '-20% 0px -60% 0px', // Trigger when section is ~20% from top
+    threshold: 0
+  });
+
+  sections.forEach(section => observer.observe(section));
+}
