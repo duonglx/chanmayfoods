@@ -277,6 +277,7 @@ function initOrderModal() {
   document.querySelectorAll('.order-btn').forEach(btn => {
     btn.addEventListener('click', (e) => {
       e.preventDefault();
+      e.stopPropagation(); // Prevent smooth scroll from triggering
       const card = btn.closest('article');
       if (!card) return;
 
@@ -307,6 +308,7 @@ function initOrderModal() {
       // Only intercept if it's a CTA button (not just navigation)
       if (link.classList.contains('bg-primary')) {
         e.preventDefault();
+        e.stopPropagation(); // Prevent smooth scroll from triggering
         // Set default product info
         currentProduct = {
           name: 'Sản phẩm Chan Mây',
