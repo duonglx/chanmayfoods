@@ -4,7 +4,7 @@
 
 /* Scroll offset for fixed header - ensures anchor links don't get hidden behind header */
 html {
-  scroll-padding-top: 3rem; /* 80px */
+  scroll-padding-top: 2rem; /* 80px */
 }
 
 /* Individual section scroll margin as fallback */
@@ -13,7 +13,7 @@ html {
 #order,
 #reviews,
 #usp {
-  scroll-margin-top: 3rem;
+  scroll-margin-top: 2rem;
 }
 
 /* Hide scrollbar but keep functionality */
@@ -73,7 +73,7 @@ html {
 .review-dot.active {
   --tw-bg-opacity: 1;
   background-color: rgb(212 113 61 / var(--tw-bg-opacity));
-  width: 1.3rem;
+  width: 1.2rem;
 }
 
 /* Mobile menu animation */
