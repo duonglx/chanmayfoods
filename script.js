@@ -31,8 +31,8 @@ function initSmoothScroll() {
 
       e.preventDefault();
 
-      // Fixed offset: 90px (header ~80px + 10px gap)
-      const offset = 90;
+      // Fixed offset: 60px
+      const offset = 60;
       const targetPosition = target.offsetTop - offset;
 
       window.scrollTo({
