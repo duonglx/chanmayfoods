@@ -24,8 +24,11 @@ function initSmoothScroll() {
 
   document.querySelectorAll('a[href^="#"]').forEach(link => {
     link.addEventListener('click', (e) => {
-      // Skip if this is an order button (handled by modal)
-      if (link.classList.contains('order-btn') || link.classList.contains('bg-primary')) return;
+      // Skip if this is an order button (handled by modal) - but still prevent default scroll
+      if (link.classList.contains('order-btn') || link.classList.contains('bg-primary')) {
+        e.preventDefault();
+        return;
+      }
 
       const targetId = link.getAttribute('href');
       if (targetId === '#') return;
