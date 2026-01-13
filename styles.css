@@ -2,20 +2,6 @@
    Chan Mây Foods - Tailwind Custom Utilities
    =========================================== */
 
-/* Scroll offset for fixed header - ensures anchor links don't get hidden behind header */
-html {
-  scroll-padding-top: 1rem; /* 80px */
-}
-
-/* Individual section scroll margin as fallback */
-#products,
-#story,
-#order,
-#reviews,
-#usp {
-  scroll-margin-top: 1rem;
-}
-
 /* Hide scrollbar but keep functionality */
 .scrollbar-hide {
   -ms-overflow-style: none;
