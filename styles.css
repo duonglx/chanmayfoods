@@ -86,3 +86,29 @@
     transform: none;
   }
 }
+
+/* Order Modal animations */
+#order-modal {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+#order-modal.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+#order-modal .modal-content {
+  transform: translate(-50%, -50%) scale(0.9);
+  transition: transform 0.3s ease;
+}
+
+#order-modal.active .modal-content {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+/* Body scroll lock when modal is open */
+body.modal-open {
+  overflow: hidden;
+}

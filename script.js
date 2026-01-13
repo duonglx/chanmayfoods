@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initScrollAnimations();
   initDeeplinks();
   initSmoothScroll();
+  initOrderModal();
 });
 
 /* ===========================================
@@ -53,7 +54,8 @@ const deeplinks = {
   facebook: 'https://facebook.com/chanmayfoods',
   shopee: 'https://shopee.vn/chanmayfoods',
   tiktok: 'https://www.tiktok.com/@chanmayfoods',
-  instagram: 'https://instagram.com/chanmayfoods'
+  instagram: 'https://instagram.com/chanmayfoods',
+  phone: 'tel:0123456789'
 };
 
 /* ===========================================
@@ -253,6 +255,123 @@ function initDeeplinks() {
       }
     });
   });
+}
+
+/* ===========================================
+   Order Modal
+   Shows product confirmation and channel selection
+   =========================================== */
+function initOrderModal() {
+  const modal = document.getElementById('order-modal');
+  if (!modal) return;
+
+  // Store current product info
+  let currentProduct = {
+    name: '',
+    size: '',
+    price: '',
+    image: ''
+  };
+
+  // Open modal when clicking "Mua hàng" buttons on product cards
+  document.querySelectorAll('.order-btn').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      const card = btn.closest('article');
+      if (!card) return;
+
+      // Get product info from card
+      currentProduct.name = card.querySelector('h3')?.textContent || 'Sản phẩm';
+      currentProduct.image = card.querySelector('img')?.src || '';
+      currentProduct.price = card.querySelector('.price')?.textContent || '';
+
+      // Get active size
+      const activeSize = card.querySelector('.size-selector button.active');
+      currentProduct.size = activeSize ? activeSize.textContent : '';
+
+      // Populate modal
+      document.getElementById('modal-product-name').textContent = currentProduct.name;
+      document.getElementById('modal-product-size').textContent = currentProduct.size ? `Dung tích: ${currentProduct.size}` : '';
+      document.getElementById('modal-product-price').textContent = currentProduct.price;
+      document.getElementById('modal-product-image').src = currentProduct.image;
+      document.getElementById('modal-product-image').alt = currentProduct.name;
+
+      // Show modal
+      openModal();
+    });
+  });
+
+  // Open modal from header/nav "Mua hàng" buttons
+  document.querySelectorAll('a[href="#order"]').forEach(link => {
+    link.addEventListener('click', (e) => {
+      // Only intercept if it's a CTA button (not just navigation)
+      if (link.classList.contains('bg-primary')) {
+        e.preventDefault();
+        // Set default product info
+        currentProduct = {
+          name: 'Sản phẩm Chan Mây',
+          size: '',
+          price: 'Liên hệ báo giá',
+          image: 'https://images.unsplash.com/photo-1631452180519-c014fe946bc7?w=200&h=200&fit=crop'
+        };
+
+        document.getElementById('modal-product-name').textContent = currentProduct.name;
+        document.getElementById('modal-product-size').textContent = 'Xem danh sách sản phẩm bên dưới';
+        document.getElementById('modal-product-price').textContent = currentProduct.price;
+        document.getElementById('modal-product-image').src = currentProduct.image;
+
+        openModal();
+      }
+    });
+  });
+
+  // Close modal handlers
+  modal.querySelectorAll('[data-close-modal]').forEach(el => {
+    el.addEventListener('click', closeModal);
+  });
+
+  // Close on Escape key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && modal.classList.contains('active')) {
+      closeModal();
+    }
+  });
+
+  // Channel click handlers
+  modal.querySelectorAll('[data-channel]').forEach(link => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      const channel = link.dataset.channel;
+      const url = deeplinks[channel];
+
+      if (url) {
+        // For phone, use direct link
+        if (channel === 'phone') {
+          window.location.href = url;
+        } else {
+          window.open(url, '_blank', 'noopener,noreferrer');
+        }
+        closeModal();
+      }
+    });
+  });
+
+  function openModal() {
+    modal.classList.remove('hidden');
+    // Trigger reflow for animation
+    modal.offsetHeight;
+    modal.classList.add('active');
+    document.body.classList.add('modal-open');
+  }
+
+  function closeModal() {
+    modal.classList.remove('active');
+    document.body.classList.remove('modal-open');
+    // Wait for animation to complete before hiding
+    setTimeout(() => {
+      modal.classList.add('hidden');
+    }, 300);
+  }
 }
 
 /* ===========================================
