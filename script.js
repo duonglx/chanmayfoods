@@ -26,10 +26,9 @@ function initSmoothScroll() {
   document.querySelectorAll('a[href^="#"]').forEach(link => {
     link.addEventListener('click', (e) => {
       // Skip if this is an order button (handled by modal) - but still prevent default scroll
-      // Only block: order-btn class OR (bg-primary class AND href is #order)
-      const isOrderBtn = link.classList.contains('order-btn');
-      const isOrderLink = link.classList.contains('bg-primary') && link.getAttribute('href') === '#order';
-      if (isOrderBtn || isOrderLink) {
+      // order-btn = product card buttons, order-cta = header CTA buttons
+      const isOrderBtn = link.classList.contains('order-btn') || link.classList.contains('order-cta');
+      if (isOrderBtn) {
         e.preventDefault();
         return;
       }
@@ -312,28 +311,26 @@ function initOrderModal() {
     });
   });
 
-  // Open modal from header/nav "Mua hàng" buttons
-  document.querySelectorAll('a[href="#order"]').forEach(link => {
+  // Open modal from header/nav "Mua hàng" CTA buttons
+  document.querySelectorAll('.order-cta').forEach(link => {
     link.addEventListener('click', (e) => {
-      // Only intercept if it's a CTA button (not just navigation)
-      if (link.classList.contains('bg-primary')) {
-        e.preventDefault();
-        e.stopPropagation(); // Prevent smooth scroll from triggering
-        // Set default product info
-        currentProduct = {
-          name: 'Sản phẩm Chan Mây',
-          size: '',
-          price: 'Liên hệ báo giá',
-          image: 'https://images.unsplash.com/photo-1631452180519-c014fe946bc7?w=200&h=200&fit=crop'
-        };
+      e.preventDefault();
+      e.stopPropagation();
 
-        document.getElementById('modal-product-name').textContent = currentProduct.name;
-        document.getElementById('modal-product-size').textContent = 'Xem danh sách sản phẩm bên dưới';
-        document.getElementById('modal-product-price').textContent = currentProduct.price;
-        document.getElementById('modal-product-image').src = currentProduct.image;
+      // Set default product info for header CTA
+      currentProduct = {
+        name: 'Sản phẩm Chan Mây',
+        size: '',
+        price: 'Liên hệ báo giá',
+        image: 'https://images.unsplash.com/photo-1631452180519-c014fe946bc7?w=200&h=200&fit=crop'
+      };
 
-        openModal();
-      }
+      document.getElementById('modal-product-name').textContent = currentProduct.name;
+      document.getElementById('modal-product-size').textContent = 'Xem danh sách sản phẩm bên dưới';
+      document.getElementById('modal-product-price').textContent = currentProduct.price;
+      document.getElementById('modal-product-image').src = currentProduct.image;
+
+      openModal();
     });
   });
 
