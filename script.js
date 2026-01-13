@@ -10,7 +10,38 @@ document.addEventListener('DOMContentLoaded', () => {
   initReviewsSlider();
   initScrollAnimations();
   initDeeplinks();
+  initSmoothScroll();
 });
+
+/* ===========================================
+   Smooth Scroll with Header Offset
+   Scrolls to anchor with 10px gap below header
+   =========================================== */
+function initSmoothScroll() {
+  const header = document.querySelector('header');
+  if (!header) return;
+
+  document.querySelectorAll('a[href^="#"]').forEach(link => {
+    link.addEventListener('click', (e) => {
+      const targetId = link.getAttribute('href');
+      if (targetId === '#') return;
+
+      const target = document.querySelector(targetId);
+      if (!target) return;
+
+      e.preventDefault();
+
+      // Calculate header height + margin + 10px gap
+      const headerHeight = header.offsetHeight + 16 + 10; // 16px = top-4 margin
+      const targetPosition = target.offsetTop - headerHeight;
+
+      window.scrollTo({
+        top: targetPosition,
+        behavior: 'smooth'
+      });
+    });
+  });
+}
 
 /* ===========================================
    DEEPLINK CONFIGURATION
