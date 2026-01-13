@@ -4,7 +4,7 @@
 
 /* Scroll offset for fixed header - ensures anchor links don't get hidden behind header */
 html {
-  scroll-padding-top: 6rem; /* 96px - accounts for floating header height + margin */
+  scroll-padding-top: 5rem; /* 80px */
 }
 
 /* Individual section scroll margin as fallback */
@@ -13,7 +13,7 @@ html {
 #order,
 #reviews,
 #usp {
-  scroll-margin-top: 6rem;
+  scroll-margin-top: 5rem;
 }
 
 /* Hide scrollbar but keep functionality */
