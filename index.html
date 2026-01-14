@@ -11,6 +11,12 @@
 
   <link rel="canonical" href="https://chanmayfoods.vn/">
 
+  <!-- Geo Tags for Local SEO -->
+  <meta name="geo.region" content="VN-SG">
+  <meta name="geo.placename" content="Ho Chi Minh City">
+  <meta name="geo.position" content="10.8231;106.6297">
+  <meta name="ICBM" content="10.8231, 106.6297">
+
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://chanmayfoods.vn/">
@@ -32,9 +38,10 @@
 
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍜</text></svg>">
 
-  <!-- Google Fonts -->
+  <!-- Google Fonts with Preload -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Be+Vietnam+Pro:wght@300;400;500;600&display=swap">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Be+Vietnam+Pro:wght@300;400;500;600&display=swap" rel="stylesheet">
 
   <!-- Tailwind CSS CDN -->
@@ -98,6 +105,137 @@
       "https://facebook.com/chanmayfoods",
       "https://instagram.com/chanmayfoods",
       "https://tiktok.com/@chanmayfoods"
+    ],
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.95",
+      "reviewCount": "5",
+      "bestRating": "5",
+      "worstRating": "1"
+    }
+  }
+  </script>
+
+  <!-- Product Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@type": "Product",
+          "name": "Xốt Phô Mai Chan Mây",
+          "description": "Xốt phô mai béo ngậy, thơm ngon từ nguyên liệu tự nhiên",
+          "image": "https://images.unsplash.com/photo-1631452180519-c014fe946bc7?w=600&h=600&fit=crop",
+          "brand": {"@type": "Brand", "name": "Chan Mây Foods"},
+          "offers": {
+            "@type": "AggregateOffer",
+            "lowPrice": "45000",
+            "highPrice": "139000",
+            "priceCurrency": "VND",
+            "availability": "https://schema.org/InStock"
+          },
+          "aggregateRating": {"@type": "AggregateRating", "ratingValue": "5.0", "reviewCount": "50"}
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "item": {
+          "@type": "Product",
+          "name": "Muối Ớt Xiêm Xanh",
+          "description": "Muối ớt xiêm xanh cay vừa phải, thơm đặc trưng",
+          "image": "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?w=600&h=600&fit=crop",
+          "brand": {"@type": "Brand", "name": "Chan Mây Foods"},
+          "offers": {
+            "@type": "AggregateOffer",
+            "lowPrice": "35000",
+            "highPrice": "115000",
+            "priceCurrency": "VND",
+            "availability": "https://schema.org/InStock"
+          },
+          "aggregateRating": {"@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "45"}
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "item": {
+          "@type": "Product",
+          "name": "Muối Ớt Hiểm Đỏ",
+          "description": "Muối ớt hiểm đỏ cay nồng, đậm vị",
+          "image": "https://images.unsplash.com/photo-1583119022894-919a68a3d0e3?w=600&h=600&fit=crop",
+          "brand": {"@type": "Brand", "name": "Chan Mây Foods"},
+          "offers": {
+            "@type": "AggregateOffer",
+            "lowPrice": "35000",
+            "highPrice": "115000",
+            "priceCurrency": "VND",
+            "availability": "https://schema.org/InStock"
+          },
+          "aggregateRating": {"@type": "AggregateRating", "ratingValue": "4.8", "reviewCount": "40"}
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 4,
+        "item": {
+          "@type": "Product",
+          "name": "Xốt Sate Tôm Jambon",
+          "description": "Xốt sate tôm jambon béo ngậy, thơm lừng",
+          "image": "https://images.unsplash.com/photo-1534939561126-855b8675edd7?w=600&h=600&fit=crop",
+          "brand": {"@type": "Brand", "name": "Chan Mây Foods"},
+          "offers": {
+            "@type": "AggregateOffer",
+            "lowPrice": "55000",
+            "highPrice": "169000",
+            "priceCurrency": "VND",
+            "availability": "https://schema.org/InStock"
+          },
+          "aggregateRating": {"@type": "AggregateRating", "ratingValue": "5.0", "reviewCount": "55"}
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 5,
+        "item": {
+          "@type": "Product",
+          "name": "Xốt Phô Mai Premium",
+          "description": "Xốt phô mai cao cấp với công thức đặc biệt",
+          "image": "https://images.unsplash.com/photo-1563379926898-05f4575a45d8?w=600&h=600&fit=crop",
+          "brand": {"@type": "Brand", "name": "Chan Mây Foods"},
+          "offers": {
+            "@type": "AggregateOffer",
+            "lowPrice": "55000",
+            "highPrice": "179000",
+            "priceCurrency": "VND",
+            "availability": "https://schema.org/InStock"
+          },
+          "aggregateRating": {"@type": "AggregateRating", "ratingValue": "5.0", "reviewCount": "60"}
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 6,
+        "item": {
+          "@type": "Product",
+          "name": "Combo Gia Vị Chan Mây",
+          "description": "Combo tiết kiệm gồm nhiều loại gia vị",
+          "image": "https://images.unsplash.com/photo-1506368249639-73a05d6f6488?w=600&h=600&fit=crop",
+          "brand": {"@type": "Brand", "name": "Chan Mây Foods"},
+          "offers": {
+            "@type": "AggregateOffer",
+            "lowPrice": "199000",
+            "highPrice": "399000",
+            "priceCurrency": "VND",
+            "availability": "https://schema.org/InStock"
+          },
+          "aggregateRating": {"@type": "AggregateRating", "ratingValue": "5.0", "reviewCount": "35"}
+        }
+      }
     ]
   }
   </script>
@@ -272,7 +410,7 @@
           <!-- Product 1: Xốt Phô Mai -->
           <article class="group bg-white dark:bg-slate-900 rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 animate-on-scroll" data-prices='{"100g":"45,000đ","250g":"79,000đ","500g":"139,000đ"}'>
             <div class="relative overflow-hidden aspect-square">
-              <img src="https://images.unsplash.com/photo-1631452180519-c014fe946bc7?w=600&h=600&fit=crop" alt="Xốt Phô Mai Chan Mây" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+              <img src="https://images.unsplash.com/photo-1631452180519-c014fe946bc7?w=600&h=600&fit=crop" alt="Xốt Phô Mai Chan Mây" width="600" height="600" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
               <div class="absolute top-3 left-3 px-3 py-1 bg-primary text-white text-xs font-medium rounded-full">
                 Bán chạy
               </div>
@@ -307,7 +445,7 @@
           <!-- Product 2: Muối Ớt Xiêm Xanh -->
           <article class="group bg-white dark:bg-slate-900 rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 animate-on-scroll" data-prices='{"100g":"35,000đ","250g":"65,000đ","500g":"115,000đ"}'>
             <div class="relative overflow-hidden aspect-square">
-              <img src="https://images.unsplash.com/photo-1596040033229-a9821ebd058d?w=600&h=600&fit=crop" alt="Muối Ớt Xiêm Xanh" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+              <img src="https://images.unsplash.com/photo-1596040033229-a9821ebd058d?w=600&h=600&fit=crop" alt="Muối Ớt Xiêm Xanh" width="600" height="600" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
             </div>
             <div class="p-5">
               <div class="flex items-center gap-1 mb-2">
@@ -339,7 +477,7 @@
           <!-- Product 3: Muối Ớt Hiểm Đỏ -->
           <article class="group bg-white dark:bg-slate-900 rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 animate-on-scroll" data-prices='{"100g":"35,000đ","250g":"65,000đ","500g":"115,000đ"}'>
             <div class="relative overflow-hidden aspect-square">
-              <img src="https://images.unsplash.com/photo-1583119022894-919a68a3d0e3?w=600&h=600&fit=crop" alt="Muối Ớt Hiểm Đỏ" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+              <img src="https://images.unsplash.com/photo-1583119022894-919a68a3d0e3?w=600&h=600&fit=crop" alt="Muối Ớt Hiểm Đỏ" width="600" height="600" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
               <div class="absolute top-3 left-3 px-3 py-1 bg-red-500 text-white text-xs font-medium rounded-full">
                 Cay nồng
               </div>
@@ -374,7 +512,7 @@
           <!-- Product 4: Xốt Sate Tôm Jambon -->
           <article class="group bg-white dark:bg-slate-900 rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 animate-on-scroll" data-prices='{"100g":"55,000đ","250g":"95,000đ","500g":"169,000đ"}'>
             <div class="relative overflow-hidden aspect-square">
-              <img src="https://images.unsplash.com/photo-1534939561126-855b8675edd7?w=600&h=600&fit=crop" alt="Xốt Sate Tôm Jambon" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+              <img src="https://images.unsplash.com/photo-1534939561126-855b8675edd7?w=600&h=600&fit=crop" alt="Xốt Sate Tôm Jambon" width="600" height="600" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
               <div class="absolute top-3 left-3 px-3 py-1 bg-accent text-white text-xs font-medium rounded-full">
                 Premium
               </div>
@@ -409,7 +547,7 @@
           <!-- Product 5: Xốt Phô Mai Premium -->
           <article class="group bg-white dark:bg-slate-900 rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 animate-on-scroll" data-prices='{"100g":"55,000đ","250g":"99,000đ","500g":"179,000đ"}'>
             <div class="relative overflow-hidden aspect-square">
-              <img src="https://images.unsplash.com/photo-1563379926898-05f4575a45d8?w=600&h=600&fit=crop" alt="Xốt Phô Mai Premium" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+              <img src="https://images.unsplash.com/photo-1563379926898-05f4575a45d8?w=600&h=600&fit=crop" alt="Xốt Phô Mai Premium" width="600" height="600" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
               <div class="absolute top-3 left-3 px-3 py-1 bg-accent text-white text-xs font-medium rounded-full">
                 Premium
               </div>
@@ -444,7 +582,7 @@
           <!-- Product 6: Combo Gia Vị -->
           <article class="group bg-white dark:bg-slate-900 rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 animate-on-scroll" data-prices='{"3món":"199,000đ","5món":"299,000đ","full":"399,000đ"}'>
             <div class="relative overflow-hidden aspect-square">
-              <img src="https://images.unsplash.com/photo-1506368249639-73a05d6f6488?w=600&h=600&fit=crop" alt="Combo Gia Vị Chan Mây" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+              <img src="https://images.unsplash.com/photo-1506368249639-73a05d6f6488?w=600&h=600&fit=crop" alt="Combo Gia Vị Chan Mây" width="600" height="600" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
               <div class="absolute top-3 left-3 px-3 py-1 bg-success text-white text-xs font-medium rounded-full">
                 Tiết kiệm
               </div>
@@ -491,7 +629,7 @@
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
           <div class="group relative rounded-2xl overflow-hidden aspect-[4/3] animate-on-scroll cursor-pointer">
-            <img src="https://images.unsplash.com/photo-1569718212165-3a8278d5f624?w=400&h=300&fit=crop" alt="Mì trộn xốt phô mai" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            <img src="https://images.unsplash.com/photo-1569718212165-3a8278d5f624?w=400&h=300&fit=crop" alt="Mì trộn xốt phô mai" width="400" height="300" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
             <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
             <div class="absolute bottom-4 left-4 right-4">
               <span class="text-white font-medium text-lg">Mì trộn xốt phô mai</span>
@@ -499,7 +637,7 @@
           </div>
 
           <div class="group relative rounded-2xl overflow-hidden aspect-[4/3] animate-on-scroll cursor-pointer">
-            <img src="https://images.unsplash.com/photo-1547592180-85f173990554?w=400&h=300&fit=crop" alt="Cơm trộn sate tôm" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            <img src="https://images.unsplash.com/photo-1547592180-85f173990554?w=400&h=300&fit=crop" alt="Cơm trộn sate tôm" width="400" height="300" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
             <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
             <div class="absolute bottom-4 left-4 right-4">
               <span class="text-white font-medium text-lg">Cơm trộn sate tôm</span>
@@ -507,7 +645,7 @@
           </div>
 
           <div class="group relative rounded-2xl overflow-hidden aspect-[4/3] animate-on-scroll cursor-pointer">
-            <img src="https://images.unsplash.com/photo-1612240498936-65f5101365d2?w=1920&h=1080&fit=crop" alt="Bánh mì chấm xốt" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            <img src="https://images.unsplash.com/photo-1612240498936-65f5101365d2?w=1920&h=1080&fit=crop" alt="Bánh mì chấm xốt" width="1920" height="1080" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
             <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
             <div class="absolute bottom-4 left-4 right-4">
               <span class="text-white font-medium text-lg">Bánh mì chấm xốt</span>
@@ -536,7 +674,7 @@
             </p>
           </div>
           <div class="animate-on-scroll">
-            <img src="https://images.unsplash.com/photo-1631452180519-c014fe946bc7?w=600&h=600&fit=crop" alt="Sản phẩm Chan Mây Foods" class="rounded-2xl shadow-xl w-full">
+            <img src="https://images.unsplash.com/photo-1631452180519-c014fe946bc7?w=600&h=600&fit=crop" alt="Sản phẩm Chan Mây Foods" width="600" height="600" loading="lazy" class="rounded-2xl shadow-xl w-full">
           </div>
         </div>
       </div>
@@ -751,7 +889,7 @@
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
         <!-- Brand -->
         <div class="text-center md:text-left">
-          <img src="https://images.unsplash.com/photo-1472476443507-c7a5948772fc?w=80&h=80&fit=crop" alt="Chan Mây Foods" class="w-16 h-16 rounded-full mx-auto md:mx-0 mb-3">
+          <img src="https://images.unsplash.com/photo-1472476443507-c7a5948772fc?w=80&h=80&fit=crop" alt="Chan Mây Foods" width="80" height="80" loading="lazy" class="w-16 h-16 rounded-full mx-auto md:mx-0 mb-3">
           <p class="font-heading text-lg text-primary">Vị Ngon Trứ Danh</p>
         </div>
 
