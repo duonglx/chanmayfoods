@@ -1,0 +1,10 @@
+# robots.txt for chanmayfoods.vn
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://chanmayfoods.vn/sitemap.xml
+
+# Disallow patterns (if needed in future)
+# Disallow: /admin/
+# Disallow: /private/
